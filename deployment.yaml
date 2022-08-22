@@ -4,21 +4,21 @@ items:
   - kind: Deployment
     apiVersion: apps/v1
     metadata:
-      name: postgresql-orm-quarkus
+      name: quarkus-orm-quickstart
     spec:
       replicas: 1
       selector:
         matchLabels:
-          name: postgresql-orm-quarkus
+          name: quarkus-orm-quickstart
       template:
         metadata:
           labels:
-            name: postgresql-orm-quarkus
+            name: quarkus-orm-quickstart
         spec:
           containers:
-            - name: postgresql-orm-quarkus
+            - name: quarkus-orm-quickstart
               # Replace this with the built image name
-              image: quay.io/ecosystem-appeng/postgresql-orm-quarkus:v0.2
+              image: quay.io/ecosystem-appeng/quarkus-orm-quickstart:v0.2
               imagePullPolicy: Always
               ports:
                 - containerPort: 8080
@@ -26,25 +26,25 @@ items:
   - kind: Service
     apiVersion: v1
     metadata:
-      name: postgresql-orm-quarkus
+      name: quarkus-orm-quickstart
       labels:
-        name: postgresql-orm-quarkus
+        name: quarkus-orm-quickstart
     spec:
       ports:
         - port: 8080
           protocol: TCP
           targetPort: 8080
       selector:
-        name: postgresql-orm-quarkus
+        name: quarkus-orm-quickstart
   - kind: Route
     apiVersion: route.openshift.io/v1
     metadata:
-      name: postgresql-orm-quarkus
+      name: quarkus-orm-quickstart
       labels:
-        name: postgresql-orm-quarkus
+        name: quarkus-orm-quickstart
     spec:
       port:
         targetPort: 8080
       to:
         kind: Service
-        name: postgresql-orm-quarkus
+        name: quarkus-orm-quickstart
