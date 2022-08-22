@@ -1,6 +1,5 @@
-package org.acme.hibernate.orm;
+package org.acme.hibernate.reactive;
 
-import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,8 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "known_fruits")
-@NamedQuery(name = "Fruits.findAll", query = "SELECT f FROM Fruit f ORDER BY f.name", hints = @QueryHint(name = "org.hibernate.cacheable", value = "true"))
-@Cacheable
+@NamedQuery(name = "Fruits.findAll", query = "SELECT f FROM Fruit f ORDER BY f.name")
 public class Fruit {
 
     @Id
@@ -47,4 +45,8 @@ public class Fruit {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Fruit{" + id + "," + name + '}';
+    }
 }
