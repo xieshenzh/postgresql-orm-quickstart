@@ -49,7 +49,15 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-reactive-oracle-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
       <artifactId>quarkus-kubernetes-service-binding</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-openshift</artifactId>
     </dependency>
 
     <!-- Testing -->
@@ -191,52 +199,6 @@
           </plugins>
         </pluginManagement>
       </build>
-    </profile>
-
-    <profile>
-      <id>postgres</id>
-      <dependencies>
-        <dependency>
-          <groupId>io.quarkus</groupId>
-          <artifactId>quarkus-reactive-pg-client</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-    <profile>
-      <id>mysql</id>
-      <dependencies>
-        <dependency>
-          <groupId>io.quarkus</groupId>
-          <artifactId>quarkus-reactive-mysql-client</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-    <profile>
-      <id>mariadb</id>
-      <dependencies>
-        <dependency>
-          <groupId>io.quarkus</groupId>
-          <artifactId>quarkus-reactive-mysql-client</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-    <profile>
-      <id>mssql</id>
-      <dependencies>
-        <dependency>
-          <groupId>io.quarkus</groupId>
-          <artifactId>quarkus-reactive-mssql-client</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-    <profile>
-      <id>oracle</id>
-      <dependencies>
-        <dependency>
-          <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-reactive-oracle-client</artifactId>
-        </dependency>
-      </dependencies>
     </profile>
   </profiles>
 </project>
